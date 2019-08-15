@@ -26,12 +26,13 @@ public class IssueApplication {
             process(applicationContext);
 
             OrderRepo repo = applicationContext.getBean(OrderRepo.class);
-            Order or = new Order();
-            or.setMonthTime("201908");
-            or.setOrderId(100);
-            ExampleMatcher exampleMatcher = ExampleMatcher.matchingAll().withMatcher("monthTime",exact())
-                    .withMatcher("orderId",exact());
-            List<Order> data = repo.findAll(Example.of(or,exampleMatcher));
+//            Order or = new Order();
+//            or.setMonthTime("201908");
+//            or.setOrderId(100);
+//            ExampleMatcher exampleMatcher = ExampleMatcher.matchingAll().withMatcher("monthTime",exact())
+//                    .withMatcher("orderId",exact());
+//            List<Order> data = repo.findAll(Example.of(or,exampleMatcher));
+            List<Order> data = repo.findAll();
             for(Order order :data){
                 order.setStatus("esdfsf");
             }
